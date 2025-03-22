@@ -86,11 +86,17 @@
         <div>这是一个占位元素</div>
         <div>这是一个占位元素</div>
         <div>这是一个占位元素</div>
-        <div id="lastItem">你好，我是最后的</div>
     </div>
     <div class="error-log" id="errorLog"></div>
 
     <script>
+        // 延迟 3 秒添加最后一个元素
+        setTimeout(() => {
+          const lastItem = document.createElement('div');
+          lastItem.id = 'lastItem';
+          lastItem.textContent = 'Last Item (Delayed)';
+          document.getElementById('app').appendChild(lastItem);
+        }, 3000);
         // // 记录错误到页面
         // function logError(error) {
         //     const errorLog = document.getElementById('errorLog');
