@@ -33,43 +33,43 @@
     <div class="error-log" id="errorLog"></div>
 
     <script>
-        // 记录错误到页面
-        function logError(error) {
-            const errorLog = document.getElementById('errorLog');
-            errorLog.innerHTML += `<p>${new Date().toISOString()}: ${error}</p>`;
-        }
+        // // 记录错误到页面
+        // function logError(error) {
+        //     const errorLog = document.getElementById('errorLog');
+        //     errorLog.innerHTML += `<p>${new Date().toISOString()}: ${error}</p>`;
+        // }
 
-        // 全局错误处理
-        window.onerror = function(msg, url, line, col, error) {
-            logError(`${error.name}: ${error.message}`);
-        };
+        // // 全局错误处理
+        // window.onerror = function(msg, url, line, col, error) {
+        //     logError(`${error.name}: ${error.message}`);
+        // };
 
-        window.addEventListener('unhandledrejection', function(event) {
-            logError(`Promise Error: ${event.reason}`);
-        });
+        // window.addEventListener('unhandledrejection', function(event) {
+        //     logError(`Promise Error: ${event.reason}`);
+        // });
 
-        // 错误触发函数
-        function triggerReferenceError() {
-            console.log(undefinedVariable);
-        }
+        // // 错误触发函数
+        // function triggerReferenceError() {
+        //     console.log(undefinedVariable);
+        // }
 
-        function triggerTypeError() {
-            const obj = null;
-            obj.someMethod();
-        }
+        // function triggerTypeError() {
+        //     const obj = null;
+        //     obj.someMethod();
+        // }
 
-        function triggerSyntaxError() {
-            eval('if(true) {');
-        }
+        // function triggerSyntaxError() {
+        //     eval('if(true) {');
+        // }
 
-        function triggerPromiseError() {
-            new Promise((resolve, reject) => {
-                reject(new Error('Promise 被拒绝'));
-            });
-        }
+        // function triggerPromiseError() {
+        //     new Promise((resolve, reject) => {
+        //         reject(new Error('Promise 被拒绝'));
+        //     });
+        // }
 
-        // 自动触发一些错误
-        setTimeout(triggerReferenceError, 2000);
+        // // 自动触发一些错误
+        // setTimeout(triggerReferenceError, 2000);
     </script>
 </body>
 </html>
